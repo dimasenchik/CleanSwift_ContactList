@@ -33,18 +33,15 @@ extension ContactModel {
 extension ContactModel: RealmConvertable {
     static func mapFromRealmObject(_ object: ContactObject) -> ContactModel {
         let contact = ContactModel(firstName: object.firstName, lastName: object.lastName, phone: object.phone, id: object.id)
-        
         return contact
     }
     
     func mapToRealmObject() -> ContactObject {
         let realmContact = ContactObject()
-        
         realmContact.firstName = firstName
         realmContact.lastName = lastName
         realmContact.phone = phone
         realmContact.id = id
-        
         return realmContact
     }
 }
